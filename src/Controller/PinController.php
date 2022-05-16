@@ -13,7 +13,6 @@ use App\Form\PinType;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\EntityManagerInterface;
 
-
 class PinController extends AbstractController
 {
     /**
