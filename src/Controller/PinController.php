@@ -16,8 +16,6 @@ use Doctrine\ORM\EntityManagerInterface;
 
 class PinController extends AbstractController
 {
-   
-
     /**
      * @Route("/", name="app_home")
      */
