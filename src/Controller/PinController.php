@@ -68,6 +68,7 @@ class PinController extends AbstractController
             $this->addFlash('success', 'Pin successfully created !');
             return $this->redirectToRoute('app_home');
         }
+        
         return $this->render('pin/create.html.twig', ['monForm' => $form->createView()]);
     }
 
