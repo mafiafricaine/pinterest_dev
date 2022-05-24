@@ -8,12 +8,40 @@
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
+        <style>
+            .alert {
+                padding:  10px;
+                color:  white;
+                text-align: center;
+            }
+
+            .alert-success {
+                background-color: green ;
+            }
+
+            .alert-error {
+                background-color: red;
+            }
+
+            .alert-info {
+                background-color: blue;
+            }
+        </style>
+
 
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
     <body>
+        {% for type, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-{{ type }}" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+        
         {% block body %}{% endblock %}
     </body>
 </html>

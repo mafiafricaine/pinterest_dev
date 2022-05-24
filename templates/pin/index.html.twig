@@ -3,7 +3,7 @@
 {% block title %}Hello PinController!{% endblock %}
 
 {% block body %}
-	{# {% set pin_count = pins|length %}
+	 {# {% set pin_count = pins|length %}
     {{ pin_count }} #}
     <li><a href="{{ path('app_home') }}">Home</a></li>
      	<br>
@@ -12,7 +12,7 @@
 
     {% for pin in pins %}
         <article>
-       		<h2><a href="{{ path('app_pin_show', {id: pin.id}) }}">{{ pin.title }} </a></h2>         
+       		<h2><a href="{{ path('app_pin_show', {id: pin.id}) }}">{{ pin.title }} </a></h2>           
         	<p>{{ pin.description|u.truncate(10,'...',false) }}</p> 
             <p>Submitted {{ pin.createdAt|ago }}</p>
         </article>

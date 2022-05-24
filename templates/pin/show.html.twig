@@ -5,7 +5,15 @@
  		<h1>{{ pin.title }}</h1>
 		<p>{{ pin.description }}</p>
 		<p>Submitted {{ pin.createdAt|date }}</p>
+		<p>Last update {{ pin.updatedAt|date }}</p>
 	</article>
-		<a href="#">Edit</a>
-		<a href="{{ path('app_home') }}">Go Back</a>
+	<a href="{{ path('app_pin_edit', {id: pin.id}) }}">Edit Pin | </a>
+	<a href="#" onclick="event.preventDefault(); confirm('Are you sure you want to delete ?') && document.getElementById('js-pin-delete-form').submit();">Delete | </a>
+	<a href="{{ path('app_home') }}">Go Back</a>
+
+	<form id="js-pin-delete-form" action="{{ path('app_pin_delete', {id: pin.id}) }}" method="post" style="display:none;">
+		<input type="hidden" name="_method" value="DELETE">
+	</form>
+
+		
 {% endblock %}
