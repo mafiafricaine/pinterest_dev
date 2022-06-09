@@ -3,7 +3,8 @@
 {% block body %}
     <article>
  		<h1>{{ pin.title }}</h1>
-		<p>{{ pin.description }}</p>
+		 <img src = {{ pin.imageName }} width="200" height="300">
+		<h5>{{ pin.description }}</h5>
 		<p>Submitted {{ pin.createdAt|date }}</p>
 		<p>Last update {{ pin.updatedAt|date }}</p>
 	</article>

@@ -71,8 +71,7 @@ class PinController extends AbstractController
         return $this->render('pin/create.html.twig', ['monForm' => $form->createView()]);
     }
 
-
-
+    
 
 
 
